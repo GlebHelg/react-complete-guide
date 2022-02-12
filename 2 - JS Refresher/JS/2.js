@@ -14,3 +14,13 @@ const printMyName2 = (name) => {
 }
 
 printMyName2(myName)
+
+const printMyName3 = name => {
+  console.log(name)
+}
+printMyName3(myName)
+
+const multiply = (num1, num2) => {
+  return num1 * num2
+}
+console.log(multiply(2, 3))
