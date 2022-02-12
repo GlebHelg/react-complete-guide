@@ -1,19 +1,16 @@
 {
-  "name": "package.json",
+  "name": "eslint-play",
   "version": "1.0.0",
   "description": "",
-  "main": "2.js",
+  "main": "index.js",
   "scripts": {
-    "test": "printMyName()"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.2.0",
+    "eslint": "^8.9.0",
     "eslint-plugin-react": "^7.28.0"
   }
 }
