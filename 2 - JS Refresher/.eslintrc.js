@@ -34,7 +34,7 @@ module.exports = {
 			'error',
 			'always'
 		],
-		'eol-last': 'off',
+		'eol-last': 'error',
 		'no-unused-vars': 'off',
 		'no-undef': 'off'
 	}
