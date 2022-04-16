@@ -1,4 +1,5 @@
 let spreadAndRest = () => {
+    console.log(spreadAndRest);
     /* #region Arrays */
     let numbers = [1,2,3,4];
     console.log('numbers:', numbers);

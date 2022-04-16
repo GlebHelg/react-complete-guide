@@ -3,11 +3,15 @@
 // 
 
 // this is available via the html, not any import export system to js file
-document.getElementById('spreadAndRest').addEventListener('click', () => spreadAndRest());
+document.getElementById('spreadAndRest')
+        .addEventListener('click', () => spreadAndRest());
+
+document.getElementById('destructuring')
+        .addEventListener('click', () => destructuring());
+
 
 let printer = (printStr) => {
     console.log(printStr);
 }
-
-document.getElementById('y').addEventListener('click', () => printer('clicked y'));
-document.getElementById('z').addEventListener('click', () => printer('clicked z'));
+document.getElementById('refsAndPrimitives')
+        .addEventListener('click', () => refsAndPrimitives());
