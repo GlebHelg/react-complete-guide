@@ -1,13 +1,22 @@
+import InputField from './InputField/InputField';
+
+const GenerateHtmlFromInputList = (inputFieldsList) => {
+    return inputFieldsList.map((o, idx) => <InputField 
+                                                    type={o.inputType} 
+                                                    label={o.inputLabel} 
+                                                    id={o.inputId} 
+                                                    value={o.value}
+                                                    key={idx}/>);
+}
 
 const InputForm = (props) => {
-
-    const inputLabel = <label className="input-label">{props.label}</label>;
-    const inputText = <input type="text" id=""/>;
-
+    console.log(props);
+    const inputFieldsListJsx = GenerateHtmlFromInputList(props.inputFieldsList);
+    console.log(inputFieldsListJsx);
     return (
-        <form className="input-field">
-            {inputLabel}
-            {inputText}
+        //() => console.log('yolo')
+        <form className="input-field" action={''}>
+            {inputFieldsListJsx}
         </form>
     );
 }

@@ -1,17 +1,33 @@
 import InputForm from '../InputForm/InputForm';
 
+const inputFormPropsGenerator = () => {
+
+    const inputFields = [
+        {
+            inputType: "text",
+            inputLabel: "Name",
+            inputId: "Name"
+        },
+        {
+            inputType: "number",
+            inputLabel: "Age",
+            inputId: "UserAge"
+        },
+        {
+            inputType: "submit",
+            inputValue: "Submit"
+        }
+    ];
+    return inputFields;
+};
 
 const UserCounterMain = () => {
 
-    const inputFieldUsername = <InputForm />;
-    const inputFieldAge = <InputForm />;
-    
     return (
         <div>
-            <h1>Hola</h1>
-            <InputForm label="Name"/>
-            {/* {inputFieldUsername}
-            {inputFieldAge} */}
+            <h1>User Counter Main</h1>
+            <InputForm inputFieldsList={inputFormPropsGenerator()}/>
+
         </div>
 
     );
