@@ -5,8 +5,8 @@ const InputField = (props) => {
 
     return (
         <>
-            {inputLabel}<br/>
-            {inputField}<br/>
+            {inputLabel}{props.break ? <br /> : null}
+            {inputField}{props.break ? <br /> : null}
         </>
     );
 }

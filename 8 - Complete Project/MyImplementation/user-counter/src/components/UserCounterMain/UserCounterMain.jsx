@@ -15,7 +15,8 @@ const inputFormPropsGenerator = () => {
         },
         {
             inputType: "submit",
-            inputValue: "Submit"
+            inputId: "addUser",
+            inputValue: "Add User"
         }
     ];
     return inputFields;

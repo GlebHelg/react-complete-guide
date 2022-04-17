@@ -5,7 +5,8 @@ const GenerateHtmlFromInputList = (inputFieldsList) => {
                                                     type={o.inputType} 
                                                     label={o.inputLabel} 
                                                     id={o.inputId} 
-                                                    value={o.value}
+                                                    value={o.inputValue}
+                                                    break={(idx < inputFieldsList.length-1) ? true : false}
                                                     key={idx}/>);
 }
 
