@@ -10,13 +10,25 @@ const GenerateHtmlFromInputList = (inputFieldsList) => {
                                                     key={idx}/>);
 }
 
+const collectFormValues = (e) => {
+    e.preventDefault();
+
+    const formProps = Object.keys(e.target)
+                            .slice(0, e.target.length)
+                            .map(idx => e.target[idx]);
+    
+    const formObjects = formProps.map(x => { return {'id: ': x.id, 'val: ': x.value}; })
+                                 .slice(0, formProps.length-1);
+
+}
+
 const InputForm = (props) => {
     console.log(props);
     const inputFieldsListJsx = GenerateHtmlFromInputList(props.inputFieldsList);
-    console.log(inputFieldsListJsx);
+
     return (
-        //() => console.log('yolo')
-        <form className="input-field" action={''}>
+        // onSubmit triggers rerender...
+        <form className="input-form" id="input-form" onSubmit={(e) => collectFormValues(e)}>
             {inputFieldsListJsx}
         </form>
     );
