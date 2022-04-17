@@ -9,9 +9,8 @@ document.getElementById('spreadAndRest')
 document.getElementById('destructuring')
         .addEventListener('click', () => destructuring());
 
-
-let printer = (printStr) => {
-    console.log(printStr);
-}
 document.getElementById('refsAndPrimitives')
         .addEventListener('click', () => refsAndPrimitives());
+
+document.getElementById('arrayFuncs')
+        .addEventListener('click', () => arrayFuncs());
