@@ -1,0 +1,8 @@
+.input-form-div{
+    display: grid; 
+    justify-content: space-around;
+}
+
+.input-form{
+    width: 50vw;
+}

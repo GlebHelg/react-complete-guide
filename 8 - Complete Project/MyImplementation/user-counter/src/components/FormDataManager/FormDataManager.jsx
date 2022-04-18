@@ -1,4 +1,5 @@
 import InputForm from '../InputForm/InputForm';
+import FormDataRenderer from '../FormDataRenderer/FormDataRenderer';
 import {useState} from 'react';
 
 const inputFormPropsGenerator = () => {
@@ -6,8 +7,8 @@ const inputFormPropsGenerator = () => {
     const inputFields = [
         {
             inputType: "text",
-            inputLabel: "Name",
-            inputId: "Name"
+            inputLabel: "Username",
+            inputId: "UsrName"
         },
         {
             inputType: "number",
@@ -23,7 +24,7 @@ const inputFormPropsGenerator = () => {
     return inputFields;
 };
 
-const UserCounterMain = () => {
+const FormDataManager = () => {
 
     let [userList, setUserList] = useState([]);
 
@@ -31,15 +32,13 @@ const UserCounterMain = () => {
     return (
         <div>
             <h1>User Counter Main</h1>
-            <InputForm inputFieldsList={inputFormPropsGenerator()} 
-                       parentSetUserList={setUserList}/>
-            <p>{userList.length > 1 ? userList[0].id  : ''}</p>
-            <p>{userList.length > 1 ? userList[0].val : ''}</p><br />
-            <p>{userList.length > 1 ? userList[1].id  : ''}</p>
-            <p>{userList.length > 1 ? userList[1].val : ''}</p><br />
+            <InputForm inputFieldsList = {inputFormPropsGenerator()} 
+                       parentUserList = {userList}
+                       parentSetUserList = {setUserList}/>
+            <FormDataRenderer formData={userList}/>
         </div>
 
     );
 }
 
-export default UserCounterMain;
+export default FormDataManager;

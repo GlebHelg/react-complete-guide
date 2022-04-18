@@ -1,4 +1,5 @@
 import InputField from './InputField/InputField';
+import './InputForm.css';
 
 const GenerateHtmlFromInputList = (inputFieldsList) => {
     return inputFieldsList.map((o, idx) => <InputField 
@@ -6,7 +7,7 @@ const GenerateHtmlFromInputList = (inputFieldsList) => {
                                                     label={o.inputLabel} 
                                                     id={o.inputId} 
                                                     value={o.inputValue}
-                                                    break={(idx < inputFieldsList.length-1) ? true : false}
+                                                    end={(idx < inputFieldsList.length-1) ? false : true}
                                                     key={idx}/>);
 }
 
@@ -23,11 +24,11 @@ const collectFormValues = (e) => {
     return formObjects;
 }
 
-const addFormElementsToUserCounterList = (e, setUserList) => {
+const addFormElementsToParentState = (e, userList, setUserList) => {
     e.preventDefault();
 
     const formValues = collectFormValues(e);
-    setUserList(formValues);
+    setUserList([...userList, formValues]);
 };
 
 const InputForm = (props) => {
@@ -35,10 +36,13 @@ const InputForm = (props) => {
     const inputFieldsListJsx = GenerateHtmlFromInputList(props.inputFieldsList);
 
     return (
-        // onSubmit triggers rerender...
-        <form className="input-form" id="input-form" onSubmit={(e) => addFormElementsToUserCounterList(e, props.parentSetUserList)}>
-            {inputFieldsListJsx}
-        </form>
+        <div className="input-form-div" >
+            <form className="input-form"
+                id="input-form" 
+                onSubmit={(e) => addFormElementsToParentState(e, props.parentUserList, props.parentSetUserList)}>
+                {inputFieldsListJsx}
+            </form>
+        </div>
     );
 }
 

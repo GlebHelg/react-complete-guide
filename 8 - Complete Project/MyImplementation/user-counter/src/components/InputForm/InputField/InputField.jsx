@@ -1,19 +1,21 @@
+import './InputField.css';
 
 const InputField = (props) => {
-    
+
     const inputLabel = <label className="input-label" 
                               id={props.id} 
                               htmlFor={props.id}>{props.label}</label>;
 
-    const inputField = <input type={props.type} 
+    const inputField = <input className="input-field" 
+                              type={props.type} 
                               id={props.id} 
                               value={props.value}/>;
 
     return (
-        <>
-            {inputLabel}{props.break ? <br /> : null}
-            {inputField}{props.break ? <br /> : null}
-        </>
+        <div className={'input-field-div'+(!props.end ? '' : '-submitBtn')}>
+            {inputLabel}{!props.end ? <br /> : null}
+            {inputField}{!props.end ? <br /> : null}
+        </div>
     );
 }
 

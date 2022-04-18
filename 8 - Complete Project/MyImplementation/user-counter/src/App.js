@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import UserCounterMain from './components/UserCounterMain/UserCounterMain';
+import FormDataManager from './components/FormDataManager/FormDataManager';
 
 function App() {
   return (
     <div className="App">
-      <UserCounterMain />
+      <FormDataManager />
     </div>
   );
 }
