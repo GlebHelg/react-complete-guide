@@ -10,12 +10,12 @@ const FormDataRenderer = (props) => {
     }
 
     const renderData = props.formData.map((formObject,idx) => 
-        <div className="form-data-and-btn-wrapper">
+        <div className="form-data-and-btn-wrapper"  key={idx+"main"}>
             {idx}
             <div className="form-data-wrapper" >
-                {formObject.map(formField => {
+                {formObject.map((formField, idx) => {
                     return (
-                        <div className="renderFormRow">
+                        <div className="renderFormRow" key={idx}>
                             <p className="renderFormCol">{formField.id}</p>
                             <p className="renderFormCol">{formField.val}</p>
                         </div>

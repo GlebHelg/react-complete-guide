@@ -7,9 +7,7 @@
     text-align: left; 
     width: inherit;
 }
-.remove-input-field-btn{
-    margin: 15px 0 15px 15px;
-}
+
 
 .input-field-div-submitBtn{
     text-align: left; 
@@ -18,5 +16,5 @@
 
 }
 .input-field{
-    width: 99%;
+    width: 99%
 }

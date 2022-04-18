@@ -6,19 +6,15 @@ const InputField = (props) => {
                               id={props.id} 
                               htmlFor={props.id}>{props.label}</label>;
 
-    const inputField = <input className="input-field" 
+    const inputField = <input className={'input-field'+(!props.end ? '' : '-submitBtn')}
                               type={props.type} 
                               id={props.id} 
                               value={props.value}/>;
 
     return (
-        <div className="input-field-and-btn-wrapper">
-            <div className={'input-field-div'+(!props.end ? '' : '-submitBtn')}>
-                {inputLabel}{!props.end ? <br /> : null}
-                {inputField}{!props.end ? <br /> : null} 
-            </div>
-            {!props.end ? <button className="remove-input-field-btn">+</button> : null}
-            {!props.end ? <button className="remove-input-field-btn">-</button> : null}
+        <div className={'input-field-div'+(!props.end ? '' : '-submitBtn')}>
+            {inputLabel}{!props.end ? <br /> : null}
+            {inputField}{!props.end ? <br /> : null} 
         </div>
     );
 }

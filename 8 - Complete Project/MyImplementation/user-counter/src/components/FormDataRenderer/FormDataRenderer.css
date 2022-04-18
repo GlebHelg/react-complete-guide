@@ -13,6 +13,7 @@
 .form-data-wrapper{
     border: 3px solid #999999; 
     display: block;
+    width: 100%
 }
 
 .remove-me-btn{

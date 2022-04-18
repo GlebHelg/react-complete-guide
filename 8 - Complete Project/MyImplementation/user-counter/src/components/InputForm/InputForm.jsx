@@ -1,7 +1,12 @@
-import InputField from './InputField/InputField';
+import {useState} from 'react';
 import './InputForm.css';
+import InputField from './InputField/InputField';
+import AddFormElement from './AddFormElement/AddFormElement';
+import RemoveFormElement from './RemoveFormElement/RemoveFormElement';
+
 
 const GenerateHtmlFromInputList = (inputFieldsList) => {
+    console.log('inputFieldsList: ', inputFieldsList);
     return inputFieldsList.map((o, idx) => <InputField 
                                                     type={o.inputType} 
                                                     label={o.inputLabel} 
@@ -28,38 +33,38 @@ const addFormElementsToParentState = (e, userList, setUserList) => {
     e.preventDefault();
 
     const formValues = collectFormValues(e);
+    console.log('addFormElementsToParentState: ', formValues);
     setUserList([...userList, formValues]);
 };
 
-const inputFormRowList = () => {
-
-    const inputFields = [
-        {
-            inputType: "text",
-            inputLabel: "Username",
-            inputId: "UsrName"
-        },{
-            inputType: "text",
-            inputLabel: "Address",
-            inputId: "Address"
-        },
-        {
-            inputType: "number",
-            inputLabel: "Age",
-            inputId: "UserAge"
-        },
-        {
-            inputType: "submit",
-            inputId: "addUser",
-            inputValue: "Add User"
-        }
-    ];
-    return inputFields;
-};
-
 const InputForm = (props) => {
+    let [formFields, setFormFields] = useState([
+                                        {
+                                            inputType: "text",
+                                            inputLabel: "Username",
+                                            inputId: "UsrName"
+                                        },{
+                                            inputType: "text",
+                                            inputLabel: "Address",
+                                            inputId: "Address"
+                                        },
+                                        {
+                                            inputType: "number",
+                                            inputLabel: "Age",
+                                            inputId: "UserAge"
+                                        },
+                                        {
+                                            inputType: "submit",
+                                            inputId: "submit",
+                                            inputValue: "Submit"
+                                        }
+                                    ]);
+
     console.log(props);
-    const inputFieldsListJsx = GenerateHtmlFromInputList(inputFormRowList());
+    const inputFieldsListJsx = GenerateHtmlFromInputList(formFields);
+ 
+ 
+
 
     return (
         <div className="input-form-div" >
@@ -68,6 +73,10 @@ const InputForm = (props) => {
                 onSubmit={(e) => addFormElementsToParentState(e, props.parentUserList, props.parentSetUserList)}>
                 {inputFieldsListJsx}
             </form>
+            <AddFormElement formFields={formFields}
+                            setFormFields={setFormFields}/>
+            <RemoveFormElement formFields={formFields}
+                               setFormFields={setFormFields}/>
         </div>
     );
 }
