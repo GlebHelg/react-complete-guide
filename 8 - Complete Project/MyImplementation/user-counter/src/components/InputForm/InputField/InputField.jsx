@@ -12,9 +12,13 @@ const InputField = (props) => {
                               value={props.value}/>;
 
     return (
-        <div className={'input-field-div'+(!props.end ? '' : '-submitBtn')}>
-            {inputLabel}{!props.end ? <br /> : null}
-            {inputField}{!props.end ? <br /> : null}
+        <div className="input-field-and-btn-wrapper">
+            <div className={'input-field-div'+(!props.end ? '' : '-submitBtn')}>
+                {inputLabel}{!props.end ? <br /> : null}
+                {inputField}{!props.end ? <br /> : null} 
+            </div>
+            {!props.end ? <button className="remove-input-field-btn">+</button> : null}
+            {!props.end ? <button className="remove-input-field-btn">-</button> : null}
         </div>
     );
 }

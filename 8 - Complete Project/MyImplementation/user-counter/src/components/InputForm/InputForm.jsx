@@ -31,9 +31,35 @@ const addFormElementsToParentState = (e, userList, setUserList) => {
     setUserList([...userList, formValues]);
 };
 
+const inputFormRowList = () => {
+
+    const inputFields = [
+        {
+            inputType: "text",
+            inputLabel: "Username",
+            inputId: "UsrName"
+        },{
+            inputType: "text",
+            inputLabel: "Address",
+            inputId: "Address"
+        },
+        {
+            inputType: "number",
+            inputLabel: "Age",
+            inputId: "UserAge"
+        },
+        {
+            inputType: "submit",
+            inputId: "addUser",
+            inputValue: "Add User"
+        }
+    ];
+    return inputFields;
+};
+
 const InputForm = (props) => {
     console.log(props);
-    const inputFieldsListJsx = GenerateHtmlFromInputList(props.inputFieldsList);
+    const inputFieldsListJsx = GenerateHtmlFromInputList(inputFormRowList());
 
     return (
         <div className="input-form-div" >

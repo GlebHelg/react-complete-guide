@@ -1,7 +1,16 @@
+.input-field-and-btn-wrapper{
+    width: inherit;
+    display: flex;
+}
+
 .input-field-div{
     text-align: left; 
     width: inherit;
 }
+.remove-input-field-btn{
+    margin: 15px 0 15px 15px;
+}
+
 .input-field-div-submitBtn{
     text-align: left; 
 }
@@ -9,5 +18,5 @@
 
 }
 .input-field{
-    width: inherit;
+    width: 99%;
 }
