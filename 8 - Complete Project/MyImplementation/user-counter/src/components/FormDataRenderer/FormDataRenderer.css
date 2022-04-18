@@ -1,3 +1,25 @@
+.form-data-renderer {
+    margin: 10px;
+    width:50%; 
+    display:inline-block;
+}
+
+.form-data-and-btn-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-data-wrapper{
+    border: 3px solid #999999; 
+    display: block;
+}
+
+.remove-me-btn{
+    background-color:crimson;
+    margin: 20px;
+}
+
 .renderFormRow{
     display: flex;
     justify-content: space-between;
@@ -6,6 +28,7 @@
     border: 2px solid #1adf1a;
     background-color:rgb(33, 167, 0);
 }
+
 .renderFormCol{
     color: whitesmoke;
     margin: 2px 0 2px 0;
