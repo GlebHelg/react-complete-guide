@@ -4,8 +4,14 @@ import './FormDataRenderer.css';
 
 const FormDataRenderer = (props) => {
 
+    const removeRow = (idx) => {
+        props.formData.splice(idx, 1)
+        props.parentSetUserList([...props.formData]);
+    }
+
     const renderData = props.formData.map((formObject,idx) => 
         <div className="form-data-and-btn-wrapper">
+            {idx}
             <div className="form-data-wrapper" >
                 {formObject.map(formField => {
                     return (
@@ -16,7 +22,7 @@ const FormDataRenderer = (props) => {
                     );
                 })}
             </div> 
-            <button className="remove-me-btn" onClick={() => console.log('remove row with idx: ', idx)}>
+            <button className="remove-me-btn" onClick={() => removeRow(idx)}>
                 X
             </button>
         </div>

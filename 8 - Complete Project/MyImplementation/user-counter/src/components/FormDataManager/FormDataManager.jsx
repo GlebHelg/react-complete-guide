@@ -39,7 +39,8 @@ const FormDataManager = () => {
             <InputForm inputFieldsList = {inputFormPropsGenerator()} 
                        parentUserList = {userList}
                        parentSetUserList = {setUserList}/>
-            <FormDataRenderer formData={userList}/>
+            <FormDataRenderer formData={userList}
+                              parentSetUserList = {setUserList}/>
         </div>
 
     );
