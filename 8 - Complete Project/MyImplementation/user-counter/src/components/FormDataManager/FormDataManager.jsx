@@ -9,6 +9,10 @@ const inputFormPropsGenerator = () => {
             inputType: "text",
             inputLabel: "Username",
             inputId: "UsrName"
+        },{
+            inputType: "text",
+            inputLabel: "Address",
+            inputId: "Address"
         },
         {
             inputType: "number",
@@ -31,7 +35,7 @@ const FormDataManager = () => {
     console.log('userList: ', userList);
     return (
         <div>
-            <h1>User Counter Main</h1>
+            <h1>Form Data Manager</h1>
             <InputForm inputFieldsList = {inputFormPropsGenerator()} 
                        parentUserList = {userList}
                        parentSetUserList = {setUserList}/>
